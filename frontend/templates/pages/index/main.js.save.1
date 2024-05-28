@@ -1,0 +1,42 @@
+function MainPage() {
+    const content ='
+	
+	';
+    document.getElementById('Main-Content') = innerHTML = content;
+}
+
+
+
+
+
+
+//Dark-mode
+
+const darkModeToggle = document.getElementById('darkmode-toggle');
+        const body = document.body;
+
+        // Verificar el estado del modo oscuro al cargar la página
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            enableDarkMode();
+        }
+
+        // Escuchar cambios en el toggle
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        });
+
+        // Función para habilitar el modo oscuro
+        function enableDarkMode() {
+            body.classList.add('dark-mode');
+            localStorage.setItem('dark-mode', 'enabled');
+        }
+
+        // Función para deshabilitar el modo oscuro
+        function disableDarkMode() {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('dark-mode', null);
+		}
